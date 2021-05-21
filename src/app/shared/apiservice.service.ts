@@ -10,7 +10,7 @@ export class ApiserviceService {
 
     private url = 'http://localhost:300/bands'
 
-  constructor(public http: HttpClient) { 
+  constructor(private http: HttpClient) { 
 
   }
 
