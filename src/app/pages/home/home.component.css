@@ -1,11 +1,28 @@
-body{
-    background-color: #fafafa;
+.title{
+    font-size: 50px;
+    text-align: center;
+    color: black;
+    margin: 2rem 0;
 }
+
+.cardList{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .card{
     flex-direction: row;
     margin: 2rem;
     align-items: center;
     width: 700px;
+    border-radius: 10px;
+}
+
+.card:hover{
+    box-shadow: 0 0px 26px 0 rgb(0 0 0 / 8%);
 }
 .card-img-top{
     width: 200px;
@@ -23,6 +40,7 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 1rem;
 }
 
 .botones button{

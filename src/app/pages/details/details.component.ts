@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/shared/service.service';
 
 @Component({
   selector: 'app-details',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  public isModal: boolean = false
+
+  constructor(public service: ServiceService) { }
+
+  showModal(){
+    this.isModal=!this.isModal
+  }
 
   ngOnInit(): void {
   }
