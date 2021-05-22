@@ -26,32 +26,36 @@ export class FormComponent implements OnInit {
 
   public message: string = ""
   public showMessage: boolean = false
+  public modalSpinner: boolean = false
 
   constructor(private formBuilder:FormBuilder,  private _router:Router, public apiservice: ApiserviceService, public service: ServiceService) {
   }
 
   addBand(){
-    console.log(this.formRock.value)
+    this.modalSpinner=true /* start spinner while API response */
     this.apiservice.addBand(this.formRock.value).subscribe((data:any)=>{
+      this.modalSpinner=false
       this.message = data.mensaje
       this.showMessage=true
       setTimeout(()=>{
           this.showMessage=false
           this._router.navigate(['home'])}
-          ,2000
+          ,3000
       )
     })
   }
 
   updateBand(){
+    this.modalSpinner=true /* start spinner while API response */
     this.apiservice.updateBand(this.formRock.value).subscribe((data:any)=>{
+      this.modalSpinner=false
 
-      if (data.codigo == 0){
+      if (data.codigo == 0){ /* if you send the same information there is no update */
         this.message = data.mensaje
         this.showMessage=true
         setTimeout(()=>{
           this.showMessage=false}
-          ,2000
+          ,3000
         )
       } 
       else{
@@ -60,7 +64,7 @@ export class FormComponent implements OnInit {
         setTimeout(()=>{
           this.showMessage=false
           this._router.navigate(['home'])}
-          ,2000
+          ,3000
         )
       }
     })  

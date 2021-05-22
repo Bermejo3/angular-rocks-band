@@ -13,9 +13,9 @@ import { ServiceService } from 'src/app/shared/service.service';
 export class HomeComponent implements OnInit {
 
   public arrayBands: Band[] = []
-  public arrayBandsBackUp: Band[] = []
+  public arrayBandsBackUp: Band[] = [] /* backup array used in filter */
   public modalDelete: boolean = false
-
+  public modalSpinner: boolean = false
   public searchText: string = ""
 
   constructor(private apiservice: ApiserviceService, private _router:Router, public service: ServiceService) { 
@@ -23,7 +23,9 @@ export class HomeComponent implements OnInit {
   }
 
   getBands(){
+    this.modalSpinner=true /* start spinner while API response */
     this.apiservice.getBands().subscribe((data: any)=>{
+      this.modalSpinner=false
       this.arrayBands = data
       this.arrayBandsBackUp = data
       this.service.arrayBands = data
@@ -38,8 +40,7 @@ export class HomeComponent implements OnInit {
   }
 
   updateBand(id: number){
-    this.service.isAdd=false
-
+    this.service.isAdd=false /* to change form page to update */
     this.service.id = id
     this.service.band = this.arrayBands.filter(e=>e.id === id)[0]
     
@@ -72,7 +73,7 @@ export class HomeComponent implements OnInit {
   }
 
   filterActive(selectBox: HTMLSelectElement){
-    if (selectBox.value=="option"){
+    if (selectBox.value=="option"){ /* to reset option */
       this.arrayBands = this.arrayBandsBackUp
     }
     else if (selectBox.value=="Active"){

@@ -55,6 +55,18 @@
     height: 315px;
 }
 
+@media only screen and (max-width: 1150px) {
+    .infoBand{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .groupPicture{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
 @media only screen and (max-width: 700px) {
     .video{
         width: 100%;

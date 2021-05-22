@@ -1,12 +1,12 @@
-<div class="infoBand row">
-    <img class="groupPicture" src="{{service.band.picture}}" alt="band">
+<div class="row infoBand">
+    <img class="groupPicture" src="{{service.band.picture}}" onerror="this.src='../../../assets/img/rock_band_group.jpg'" alt="band">
     <div class="col">
         <div class="row">
             <div class="nameVideo">
                 <h2>{{service.band.name}}</h2>
-                <h2 class="iconYT" (click)=showModal()><i class="fab fa-youtube"></i></h2>
+                <h2 *ngIf="service.band.video.includes('https://www.youtube.com/embed/')" class="iconYT" (click)=showModal()><i class="fab fa-youtube"></i></h2>
             </div>
-            <img class="logo" src="{{service.band.logo}}" alt="logo">
+            <img class="logo" src="{{service.band.logo}}" onerror="this.src='../../../assets/img/Rock_Band_logo.svg.png'" alt="logo">
         </div>
         <div class="row">
             <p class="description">{{service.band.description}}</p>

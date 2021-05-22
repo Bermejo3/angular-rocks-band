@@ -1,3 +1,4 @@
+<!-- isAdd allows to change between add and update -->
 <h2 *ngIf="this.service.isAdd" class="formTitle">Do you want to add a new rock band?</h2>
 <h2 *ngIf="!this.service.isAdd" class="formTitle">What info you wanna rock?</h2>
 <div class="formRock">
@@ -52,6 +53,15 @@
     </form>
     
 </div>
+
+    <!-- Modal Spinner while API response -->
+    <div class="modal" id="myModal" [style.display]="modalSpinner ? 'block' : 'none'">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="spinner-border text-light spinner" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
 
 
   
