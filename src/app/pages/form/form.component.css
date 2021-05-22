@@ -1,0 +1,26 @@
+.formTitle{
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.formRock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.formSize{
+    width: 330px;
+    margin: 0 1rem;
+}
+
+.spanForm{
+    width: 131px;
+    color: white;
+}
+
+.alert{
+    margin: 10px;
+    border-radius: 10px;
+}

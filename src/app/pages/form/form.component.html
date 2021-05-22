@@ -1,0 +1,57 @@
+<h2 *ngIf="this.service.isAdd" class="formTitle">Do you want to add a new rock band?</h2>
+<h2 *ngIf="!this.service.isAdd" class="formTitle">What info you wanna rock?</h2>
+<div class="formRock">
+    <form class="formSize" [formGroup]="formRock" (ngSubmit)="formRock.valid"> 
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Name</span>
+            <input type="text" class="form-control" placeholder="Rock band name" aria-label="Username" aria-describedby="basic-addon1" required
+            formControlName="name">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Website</span>
+            <input type="text" class="form-control" placeholder="Rock band website" aria-label="Username" aria-describedby="basic-addon1" required
+            formControlName="website">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Fundation year</span>
+            <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required 
+            formControlName="year">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Video</span>
+            <input type="text" class="form-control" placeholder="Embed YouTube src" aria-label="Username" aria-describedby="basic-addon1" required 
+            formControlName="video">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Picture</span>
+            <input type="text" class="form-control" placeholder="Rock band picture" aria-label="Username" aria-describedby="basic-addon1" required 
+            formControlName="picture">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Logo</span>
+            <input type="text" class="form-control" placeholder="Rock band logo" aria-label="Username" aria-describedby="basic-addon1" required 
+            formControlName="logo">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark spanForm" id="basic-addon1">Description</span>
+            <input type="text" class="form-control" placeholder="Rock band description" aria-label="Username" aria-describedby="basic-addon1" required 
+            formControlName="description">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-text bg-dark">
+              <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input"
+              formControlName="isActive">
+            </div>
+            <input type="text" class="form-control bg-light" aria-label="Text input with checkbox" placeholder="Still active?" readonly>
+          </div>
+        <button *ngIf="this.service.isAdd" type="button" class="btn btn-dark" [disabled]="formRock.invalid" (click)="addBand()">Add rock</button>
+        <button *ngIf="!this.service.isAdd" type="button" class="btn btn-dark" [disabled]="formRock.invalid" (click)="updateBand()">Update rock</button>
+        <div class="alert alert-dismissible alert-success" *ngIf="showMessage">
+            <strong>{{message}}</strong>
+        </div>
+    </form>
+    
+</div>
+
+
+  

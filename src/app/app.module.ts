@@ -8,19 +8,24 @@ import { HeaderComponent } from './pages/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { SafePipeModule } from 'safe-pipe';
+import { FormComponent } from './pages/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SafePipeModule
+    SafePipeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

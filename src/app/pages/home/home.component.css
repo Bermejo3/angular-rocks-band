@@ -5,6 +5,17 @@
     margin: 2rem 0;
 }
 
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.searchInput{
+    width: 200px;
+    margin-right: 20px;
+}
+
 .cardList{
     display: flex;
     flex-direction: column;
@@ -47,4 +58,12 @@
     width: 45px;
     height: 45px;
     margin: 5px;
+}
+
+.modal{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-footer{
+    justify-content: space-between;
 }
