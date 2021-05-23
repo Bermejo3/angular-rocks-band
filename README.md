@@ -1,3 +1,27 @@
+# Rock Bands made with Angular + Node.js
+
+CRUD example of a simple list of rock bands website made by using Angular and node.js.
+
+## Deployed
+
+This app is deployed in Heroku. You can visit and check all the funcionalities: [https://angular-rocks-band.herokuapp.com/](https://angular-rocks-band.herokuapp.com/)
+
+## API Rest
+
+ApiRest is also deployed, so you don't need to do something to activated. Just wait to Heroku app to wake up.\
+Yo can check the git repositorie if you desire: [https://github.com/Bermejo3/apiRest-angular-rocks-band](https://github.com/Bermejo3/apiRest-angular-rocks-band)
+
+## Description
+
+In the homepage you can check all the rock bands that are in the MySQL Workbench database.\
+You are able to ADD new bands in the add section.\
+You are able to DELETE a band by using the DELETE button.\
+You can check for more information by using the MORE INFO button.\
+You can UPDATE the information.\
+You can SEARCH by name or FILTER.
+
+
+
 # AngularRocksBand
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
