@@ -8,7 +8,8 @@ import { Band } from '../models/band';
 })
 export class ApiserviceService {
 
-    private url = 'http://localhost:300/bands'
+    // private url = 'http://localhost:300/bands'
+    private url = 'https://apirest-angular-rocks-band.herokuapp.com/bands'
 
   constructor(private http: HttpClient) { 
 
